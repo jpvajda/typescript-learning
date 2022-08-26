@@ -22,18 +22,18 @@
 
 // Classes //
 
-  class Person {
+  class AnotherPerson {
     constructor(
-      readonly name: string,
+      readonly firstname: string,
       private isCool: boolean,
       protected email: string,
       public pets: number
     ) {}
 
     sayMyName() {
-      console.log(`Your not Heisenberg, you're ${this.name}`);
+      console.log(`Your not Heisenberg, you're ${this.firstname}`);
     }
   }
 
-  const person9 = new Person('Tony', false, 'tony@example.com', 1);
-  console.log(person9.name);
+  const person9 = new AnotherPerson('Tony', false, 'tony@example.com', 1);
+  console.log(person9.firstname);

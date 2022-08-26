@@ -13,17 +13,17 @@
 //   console.log(e.target); // ERROR: Property 'target' does not exist on type 'Event'. Did you mean 'target'?
 // });
 // Classes //
-var Person = /** @class */ (function () {
-    function Person(name, isCool, email, pets) {
-        this.name = name;
+var AnotherPerson = /** @class */ (function () {
+    function AnotherPerson(firstname, isCool, email, pets) {
+        this.firstname = firstname;
         this.isCool = isCool;
         this.email = email;
         this.pets = pets;
     }
-    Person.prototype.sayMyName = function () {
-        console.log("Your not Heisenberg, you're ".concat(this.name));
+    AnotherPerson.prototype.sayMyName = function () {
+        console.log("Your not Heisenberg, you're ".concat(this.firstname));
     };
-    return Person;
+    return AnotherPerson;
 }());
-var person9 = new Person('Tony', false, 'tony@example.com', 1);
-console.log(person9.name);
+var person9 = new AnotherPerson('Tony', false, 'tony@example.com', 1);
+console.log(person9.firstname);
