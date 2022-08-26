@@ -72,3 +72,65 @@ var person5 = {
     isProgrammer: false
 };
 console.log("interfaces", person4, person5);
+var sayStuff = {
+    sayHi: function (name) {
+        return "Hi ".concat(name);
+    },
+    sayBye: function (name) { return "Bye ".concat(name); }
+};
+console.log(sayStuff.sayHi('John'));
+console.log(sayStuff.sayBye('John'));
+//Functions//
+// Define a function called circle that takes a diam variable of type number, and returns a string
+function circle1(diam) {
+    return 'The circumference is ' + Math.PI * diam;
+}
+console.log(circle1(10));
+var circle2 = function (diam) {
+    return 'The circumference is ' + Math.PI * diam;
+};
+console.log(circle2(10));
+var circle3 = function (diam) {
+    return 'The circumference is ' + Math.PI * diam;
+};
+console.log(circle3(10));
+var add = function (a, b, c) {
+    console.log(c);
+    return a + b;
+};
+console.log(add(5, 4, 'I could pass a number, string, or nothing here!'));
+var logMessage = function (msg) {
+    console.log('This is ' + msg);
+};
+logMessage('a void example');
+// Declare the variable sayHello, and give it a function signature that takes a string and returns nothing.
+var sayHello;
+// Define the function, satisfying its signature
+sayHello = function (name) {
+    console.log('Hello ' + name);
+};
+sayHello('Danny');
+// Dynamic Any Types //
+var age2 = '100'; // Using the any type, we can basically revert TypeScript back into JavaScript
+age2 = 100;
+age2 = {
+    years: 100,
+    months: 2
+};
+console.log(age2);
+var person7 = {
+    name: 'John',
+    id: 1
+};
+var person8 = {
+    name: 'Delia',
+    id: 2
+};
+var sayHello2 = function (person) {
+    return 'Hi ' + person.name;
+};
+var sayGoodbye = function (person) {
+    return 'Bye ' + person.name;
+};
+console.log(sayHello2(person7));
+console.log(sayGoodbye(person8));

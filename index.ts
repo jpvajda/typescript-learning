@@ -88,7 +88,7 @@ person3 = {
 };
 
 
-// Interfaces
+// Interfaces //
 interface Person {
   name: string;
   location: string;
@@ -110,3 +110,109 @@ let person5: Person = {
 console.log("interfaces", person4, person5)
 
 
+interface Speech {
+  sayHi(name: string): string; //common JS
+  sayBye: (name: string) => string; //ES6
+}
+
+let sayStuff: Speech = {
+  sayHi: function (name: string) {
+    return `Hi ${name}`;
+  },
+  sayBye: (name: string) => `Bye ${name}`,
+};
+
+console.log(sayStuff.sayHi('John'));
+console.log(sayStuff.sayBye('John'));
+
+//Functions//
+
+// Define a function called circle that takes a diam variable of type number, and returns a string
+
+function circle1(diam: number): string { // commonJS
+  return 'The circumference is ' + Math.PI * diam;
+}
+
+console.log(circle1(10));
+
+const circle2 = (diam: number): string => { // E6
+  return 'The circumference is ' + Math.PI * diam;
+};
+
+console.log(circle2(10));
+
+const circle3: Function = (diam: number): string => { // Using explicit typing
+  return 'The circumference is ' + Math.PI * diam;
+};
+
+console.log(circle3(10));
+
+
+const add = (a: number, b: number, c?: number | string) => { // c is an optional parameter
+  console.log(c);
+
+  return a + b;
+};
+
+console.log(add(5, 4, 'I could pass a number, string, or nothing here!'));
+
+
+const logMessage = (msg: string): void => { // a void data type
+  console.log('This is ' + msg);
+};
+
+logMessage('a void example');
+
+// Declare the variable sayHello, and give it a function signature that takes a string and returns nothing.
+let sayHello: (name: string) => void;
+
+// Define the function, satisfying its signature
+sayHello = (name) => {
+  console.log('Hello ' + name);
+};
+
+sayHello('Danny');
+
+// Dynamic Any Types //
+
+let age2: any = '100'; // Using the any type, we can basically revert TypeScript back into JavaScript
+age2 = 100;
+age2 = {
+  years: 100,
+  months: 2,
+};
+
+console.log(age2)
+
+
+
+// Type Aliases //
+
+type StringOrNumber = string | number;
+
+type PersonObject = {
+  name: string;
+  id: StringOrNumber;
+};
+
+const person7: PersonObject = {
+  name: 'John',
+  id: 1,
+};
+
+const person8: PersonObject = {
+  name: 'Delia',
+  id: 2,
+};
+
+const sayHello2 = (person: PersonObject) => {
+  return 'Hi ' + person.name;
+};
+
+const sayGoodbye = (person: PersonObject) => {
+  return 'Bye ' + person.name;
+};
+
+
+console.log(sayHello2(person7))
+console.log(sayGoodbye(person8))
