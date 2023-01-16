@@ -33,7 +33,24 @@
     sayMyName() {
       console.log(`Your not Heisenberg, you're ${this.firstname}`);
     }
+
   }
 
   const person9 = new AnotherPerson('Tony', false, 'tony@example.com', 1);
   console.log(person9.firstname);
+  class Programmer extends AnotherPerson { //  Classes can also be extended.
+    programmingLanguages: string[];
+
+    constructor(
+      name: string,
+      isCool: boolean,
+      email: string,
+      pets: number,
+      pL: string[]
+    ) {
+      // The super call must supply all parameters for base (Person) class, as the constructor is not inherited.
+      super(name, isCool, email, pets);
+      this.programmingLanguages = pL;
+    }
+  }
+
